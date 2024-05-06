@@ -24,7 +24,7 @@ async function getFilm(id) {
   try {
     film.characters = await fetchCharacters(film);
     film.planets = await fetchPlanets(film);
-    r
+    
   } catch (err) {
     console.log(`Error reading film ${id} data.`, err.message);
   }
@@ -59,6 +59,9 @@ const renderFilm = (film) => {
   const charLis = film?.characters?.map(character =>
       `<li><a href="/character.html?id=${character.id}">${character.name}</a></li>`);
       charUl.innerHTML = charLis.join("");
-      
+    
+  const planLis = film?.planet?.map(character =>
+      `<li><a href="/planet.html?id=${planet.id}">${planet.name}</a></li>`);
+      planetUl.innerHTML = charLis.join("");
   
 };
