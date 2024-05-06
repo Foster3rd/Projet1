@@ -43,8 +43,8 @@ async function fetchCharacters(film) {
 }
 
 //workign this out
-async function fetchHomeworld(film) {
-  const url = `${baseUrl}/films/${film.id}/homeworld`;
+async function fetchPlanets(film) {
+  const url = `${baseUrl}/films/${film.id}/planets`;
   const planets = await fetch(url).then((res) => res.json());
   return planets;
 }
@@ -60,8 +60,8 @@ const renderFilm = (film) => {
       `<li><a href="/character.html?id=${character.id}">${character.name}</a></li>`);
       charUl.innerHTML = charLis.join("");
     
-  const planLis = film?.planet?.map(character =>
-      `<li><a href="/planet.html?id=${planet.id}">${planet.name}</a></li>`);
-      planetUl.innerHTML = charLis.join("");
+  const planLis = film?.planets?.map(planets =>
+      `<li><a href="/planet.html?id=${planets.id}">${planets.name}</a></li>`);
+      planetUl.innerHTML = planLis.join("");
   
 };
