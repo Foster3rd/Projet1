@@ -42,8 +42,9 @@ async function fetchCharacters(film) {
   return characters;
 }
 
-async function fetchPlanets(film) {
-  const url = `${baseUrl}/films/${film.id}/planets`;
+//workign this out
+async function fetchHomeworld(film) {
+  const url = `${baseUrl}/films/${film.id}/homeworld`;
   const planets = await fetch(url).then((res) => res.json());
   return planets;
 }
